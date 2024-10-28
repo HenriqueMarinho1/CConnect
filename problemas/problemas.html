@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprovação de problemas</title>
+    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" 
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
+    crossorigin="anonymous" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-children">
+            <div class="imagemview"></div>
+            <form id="mediaForm" enctype="multipart/form-data">
+                <textarea name="descricao" id="descricao" placeholder="Descreva o problema na imagem" rows="5"
+                    cols="33"></textarea>
+                <input type="file" id="media" name="media" accept="image/png, image/jpeg, video/mp4, video/avi, video/mov" required>
+                <button type="submit" id="btnEnviar">Enviar</button>
+                <button type="button" id="btnVoltar">Voltar</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

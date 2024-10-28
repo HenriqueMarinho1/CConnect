@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/scripttela.js" defer></script>
+    <script src="js/scriptcomUsuario.js" defer></script>
+    <script src="js/scriptcomCadastro.js" type="module" defer></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" 
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
+    crossorigin="anonymous" defer></script>
+    <title>Comunidade</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <span class="bg-animate"></span>
+        <span class="bg-animate2"></span>
+        <div class="form-box login">
+            <h2 class="animation" style="--i:0; --j:21;">Login</h2>
+            <form action="#">
+                <div class="input-box animation" style="--i:1; --j:22;">
+                    <input type="text" id="email" required>
+                    <label>Email</label>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box animation" style="--i:2; --j:23;">
+                    <input type="password" id="senha" required>
+                    <label>Senha</label>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <button type="submit" class="btn animation" style="--i:3; --j:24;" id="btnEntrar">Logar</button>
+                <div class="logreg-link animation" style="--i:4; --j:25;">
+                    <p>Não tem uma conta? <a href="#" class="register-link">Cadastrar-se</a></p>
+                </div>
+                <div class="logreg-link animation" style="--i:4; --j:25;">
+                    <p>Esqueceu a senha?<a href="esqueci_senha_comunidade.html" class="register-link"> Recuperar</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="info-text login">
+            <a href="../index.html"><img class="animation logo_login" style="--i:0; --j:19;" src="img/Design_sem_nome-removebg-preview.png" alt=""></a>
+            <h2 class="animation" style="--i:0; --j:20;">Bem vindo de volta!</h2>
+            <p class="animation" style="--i:1; --j:21;">
+                Muito obrigado</p>
+        </div>
+        <div class="form-box register-comunidade com">
+            <h2 class="animation" style="--i:17; --j:0;">Cadastro</h2>
+            <form action="#">
+                <div class="input-box animation input-box2" style="--i:18; --j:1;">
+                    <input type="text" id="nome" required>
+                    <label>Nome</label>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box animation" style="--i:19; --j:2;">
+                    <input type="numeric" id="telefone" maxlength="11" required>
+                    <label>Telefone</label>
+                    <i class='bx bxs-phone'></i>
+                </div>
+                
+                <div class="input-box animation" style="--i:20; --j:3;">
+                    <input type="text" id="cep" required>
+                    <label>Cep</label>
+                    <i class='bx bxs-map'></i>
+                </div>
+                <div class="input-box animation" style="--i:22; --j:5;">
+                    <input type="text" id="user" required>
+                    <label>Email</label>
+                    <i class='bx bxs-envelope'></i>
+                </div>
+                <div class="input-box animation" style="--i:23; --j:6;">
+                    <input type="password" id="password" required>
+                    <label>Senha</label>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div class="input-box animation" style="--i:24; --j:7;">
+                    <input type="password" id="confpassword" required>
+                    <label>Confirmar Senha</label>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div class="animation tipe" id="caixas" style="--i:25; --j:8;">
+                    <label class="tipo">Tipo Telefone:</label>
+                    <div>
+                        <label class="animation tipe t corpo" style="--i:26; --j:9;">
+                        <input id="radiocomu" name="opcao" type="radio" value="Comunidade" required> Comunidade</label>
+                        <label class="animation tipe t corpo celular" style="--i:27; --j:10;">
+                        <input id="radiocon" name="opcao" type="radio" value="Condominio" required> Condominio</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn animation" style="--i:21; --j:4;" id="btnCadastrar">Cadastrar</button>
+                <div class="logreg-link animation" style="--i:22; --j:5;">
+                    <p>Já tem uma conta? <a href="#" class="login-link">Logar</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="info-text register-comunidade">
+            <a href="../index.html"><img class="animation logo_cadastro" style="--i:16; --j:0;" src="img/Design_sem_nome-removebg-preview.png" alt=""></a>
+            <h2 class="animation" style="--i:17; --j:1;">Seja bem vindo!</h2>
+            <p class="animation" style="--i:18; --j:2;">
+                Espero que aproveite ao máximo nossos recursos</p>
+        </div>
+    </div>
+</body>
+
+</html>

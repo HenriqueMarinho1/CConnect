@@ -1,0 +1,599 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: black;
+}
+
+.wrapper {
+    position: relative;
+    width: 750px;
+    height: 450px;
+    background: transparent;
+    border: 2px solid #f7ce469c;
+    box-shadow: 0 0 25px #f7cd46;
+    overflow: hidden;
+}
+
+.wrapper .form-box {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wrapper .form-box.login {
+    left: 0;
+    padding: 0 60px 0 40px;
+}
+
+.wrapper .form-box.login .animation {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    transition: .7s ease;
+    transition-delay: calc(.1s * var(--j));
+}
+
+.wrapper.active .form-box.login .animation {
+    transform: translateX(-120%);
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(.1s * var(--i));
+}
+
+.wrapper .form-box.register-lc {
+    right: 0;
+    padding: 0 40px 0 60px;
+    pointer-events: none;
+}
+
+.wrapper.active .form-box.register-lc {
+    pointer-events: auto;
+}
+
+.wrapper .form-box.register-lc .animation {
+    transform: translateX(120%);
+    opacity: 0;
+    filter: blur(10px);
+    transition: .7s ease;
+    transition-delay: calc(.1s * var(--j));
+}
+
+.wrapper.active .form-box.register-lc .animation {
+    transform: translateX(0);
+    opacity: 100%;
+    filter: blur(0);
+    transition-delay: calc(.1s * var(--i));
+}
+
+.wrapper .form-box.register-comunidade {
+    right: 0;
+    padding: 0 40px 0 60px;
+    pointer-events: none;
+}
+
+.wrapper.active .form-box.register-comunidade {
+    pointer-events: auto;
+}
+
+.wrapper .form-box.register-comunidade .animation {
+    transform: translateX(120%);
+    opacity: 0;
+    filter: blur(10px);
+    transition: .7s ease;
+    transition-delay: calc(.1s * var(--j));
+}
+
+.wrapper.active .form-box.register-comunidade .animation {
+    transform: translateX(0);
+    opacity: 100%;
+    filter: blur(0);
+    transition-delay: calc(.1s * var(--i));
+}
+
+.form-box h2 {
+    font-size: 32px;
+    color: white;
+    text-align: center;
+}
+
+.form-box .input-box {
+    position: relative;
+    width: 100%;
+    height: 15px;
+    background: transparent;
+    margin: 25px 0;
+}
+
+.com .input-box {
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background: transparent;
+    margin: 25px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid white;
+    padding-right: 23px;
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+    transition: .5s;
+}
+
+.input-box input:focus,
+.input-box input:valid {
+    border-bottom-color: #f7cd46;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: white;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+    color: #f7cd46;
+}
+
+.input-box i {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 10px;
+    color: white;
+    transition: .5s;
+}
+
+.input-box input:focus~i,
+.input-box input:valid~i {
+    color: #f7cd46;
+}
+
+.btn {
+    position: relative;
+    width: 100%;
+    height: 45px;
+    background: transparent;
+    border: 2px solid #f7cd46;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 300%;
+    background: linear-gradient(black, #f7cd46, black, #f7cd46);
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn:hover::before {
+    top: 0;
+}
+
+.form-box .logreg-link {
+    font-size: 14.5px;
+    color: white;
+    text-align: center;
+    margin: 20px 0 10px;
+}
+
+.logreg-link p a {
+    color: #f7cd46;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.logreg-link p a:hover {
+    text-decoration: underline;
+}
+
+.wrapper .info-text {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wrapper .info-text.login {
+    right: 0;
+    text-align: right;
+    padding: 0 40px 60px 150px;
+}
+
+.wrapper .info-text.login .animation {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    transition: .7s ease;
+    transition-delay: calc(.1s * var(--j));
+}
+
+.wrapper.active .info-text.login .animation {
+    transform: translateX(120%);
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(.1s * var(--i));
+}
+
+.wrapper .info-text.register-lc {
+    left: 0;
+    text-align: left;
+    padding: 0 150px 60px 40px;
+    pointer-events: none;
+}
+
+.wrapper.active .info-text.register-lc {
+    pointer-events: auto;
+}
+
+.wrapper .info-text.register-lc .animation {
+    transform: translateX(-120%);
+    opacity: 0;
+    filter: blur(10px);
+    transition: .7s ease;
+    transition-delay: calc(.1s * var(--j));
+}
+
+.wrapper.active .info-text.register-lc .animation {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    transition-delay: calc(.1s * var(--i));
+}
+
+.wrapper .info-text.register-comunidade {
+    left: 0;
+    text-align: left;
+    padding: 0 150px 60px 40px;
+    pointer-events: none;
+}
+
+.wrapper.active .info-text.register-comunidade {
+    pointer-events: auto;
+}
+
+.wrapper .info-text.register-comunidade .animation {
+    transform: translateX(-120%);
+    opacity: 0;
+    filter: blur(10px);
+    transition: .7s ease;
+    transition-delay: calc(.1s * var(--j));
+}
+
+.wrapper.active .info-text.register-comunidade .animation {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    transition-delay: calc(.1s * var(--i));
+}
+
+.info-text h2 {
+    font-size: 36px;
+    color: white;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.info-text p {
+    font-size: 16px;
+    color: white;
+}
+
+.wrapper .bg-animate {
+    position: absolute;
+    top: -4px;
+    right: 0;
+    width: 850px;
+    height: 600px;
+    background: linear-gradient(45deg, black, #f7cd46);
+    border-bottom: 3px solid #f7ce46;
+    transform: rotate(10deg) skewY(40deg);
+    transform-origin: bottom right;
+    transition: 1.5s ease;
+    transition-delay: 1.6s;
+}
+
+.wrapper.active .bg-animate {
+    transform: rotate(0) skewY(0);
+    transition-delay: .5s;
+}
+
+.wrapper .bg-animate2 {
+    position: absolute;
+    top: 100%;
+    left: 250px;
+    width: 850px;
+    height: 700px;
+    background: black;
+    border-top: 3px solid #f7cd46;
+    transform: rotate(0) skewY(0);
+    transform-origin: bottom left;
+    transition: 1.5s ease;
+    transition-delay: .5s;
+}
+/* #f7cd46 */
+.wrapper.active .bg-animate2 {
+    transform: rotate(-11deg) skewY(-41deg);
+    transition-delay: 1.2s;
+}
+
+.logo_inicial {
+    width: 40%;
+    height: 22vh;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    margin-left: 30%;
+    margin-top: 5%;
+}
+
+.logo_login {
+    position: absolute;
+    width: 120px;
+    right: 0;
+    right: 21px;
+    top: 0;
+    top: 13px;
+}
+
+.logo_cadastro {
+    position: absolute;
+    width: 120px;
+    left: 0;
+    left: 22px;
+    top: 0;
+    top: 13px;
+}
+
+.logo_options {
+    width: 40%;
+    height: 22vh;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    margin-left: 30%;
+    margin-top: 5%;
+}
+
+.logo_mapeamento {
+    width: 40%;
+    height: 20vh;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    margin-left: 30%;
+}
+
+.logo_monitoramento {
+    width: 40%;
+    height: 20vh;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    margin-left: 30%;
+}
+
+.logo_financiamento {
+    width: 30%;
+    height: 15vh;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    margin-left: 35%;
+}
+
+.esp {
+    position: relative;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+.buttons_inicial {
+    position: relative;
+    width: 80%;
+    height: 6vh;
+    margin-top: 5px;
+    margin-bottom: 40px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.meio {
+    width: 40%;
+    margin: 2%;
+}
+
+.op {
+    position: relative;
+    top: -30px;
+    width: 100%;
+    height: 19vh;
+}
+
+.colunas {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.mapeamento {
+    height: 80vh;
+    color: white;
+}
+
+.t-mapeamento {
+    position: relative;
+    text-align: center;
+}
+
+.p-mapeamento {
+    position: relative;
+    margin-bottom: 2%;
+    text-align: center;
+}
+
+.esp-mapeamento {
+    position: relative;
+    width: 100%;
+    height: 10vh;
+    align-items: center;
+}
+
+.esp-financiamento {
+    position: relative;
+    width: 100%;
+    height: 7vh;
+    align-items: center;
+}
+
+.sair {
+    position: absolute;
+    width: 20%;
+    height: 12%;
+    right: 1%;
+    top: 2%;
+}
+
+.but {
+    background-color: transparent;
+    border: transparent;
+    position: relative;
+    color: white;
+    width: 100%;
+    height: 100%;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.parte_do_mapa_mapeamento {
+    position: relative;
+    width: 50%;
+    height: 300px;
+    align-items: center;
+    left: 25%;
+    text-align: center;
+    color: white;
+    border: 2px solid #f7ce469c;
+    box-shadow: 0 0 25px #f7cd46;
+    overflow: hidden;
+}
+
+.mapa_mapeamento {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.btnInserir_mapeamento {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.btnInserir_financiamento {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.inserir_numero_problema_monitoramento {
+    position: relative;
+    width: 50%;
+    left: 20%;
+    margin: 5%;
+}
+
+.inserir_dinheiro_financiamento {
+    position: relative;
+    width: 50%;
+    left: 18.2%;
+    margin: 7%;
+    margin-top: 0vh;
+}
+
+.sifrao {
+    width: 35%;
+    position: relative;
+    left: 32.2%;
+    margin-bottom: -2vh;
+}
+
+.pix-co {
+    border: 2px solid #f7ce469c;
+    box-shadow: 0 0 25px #f7cd46;
+    position: relative;
+    left: 25%;
+    width: 50%;
+}
+
+.pix {
+    position: relative;
+    text-align: center;
+    height: 3vh;
+}
+
+.t {
+    text-align: center;
+    border-radius: 30px;
+}
+
+.tipe {
+    color: white;
+    margin: 2%;
+    margin-left: 0%;
+}
+
+.tipo {
+    margin-top: 5px;
+}
