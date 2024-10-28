@@ -15,6 +15,9 @@ CConnect é um projeto de união comunitária voltado para condomínios, desenvo
 - Gestão de eventos
 - Fórum de discussão
 - Notificações importantes
+- Problemas locais
+- Monitoramento de progresso
+- Recursos de financiamento coletivo
 
 ## Instalação
 
@@ -22,10 +25,7 @@ Para instalar e executar o projeto, siga os passos abaixo:
 
 ```bash
 # Clone o repositório
-git clone https://github.com/usuario/CConnect.git
+git clone https://github.com/HenriqueMarinho1/CConnect.git
 
 # Navegue até o diretório do projeto
 cd CConnect
-
-# Instale as dependências necessárias (se houver)
-# Exemplo: npm install ou composer install
