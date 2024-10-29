@@ -10,25 +10,33 @@ $telefone = $_POST['telefone'];
 $cep = $_POST['cep'];
 $tipo = $_POST['selectedOption'];
 
-$sql = $conn->prepare('INSERT INTO moradia (nome, cep, email, senha, telefone, tipo) VALUE (:nome, :cep, :email, :senha, :telefone, :tipo)');
-$sql->bindvalue(':email', $email);
-$sql->bindValue(':senha', $senha);
-$sql->bindValue(':nome', $nome);
-$sql->bindValue(':telefone', $telefone);
-$sql->bindValue(':cep', $cep);
-$sql->bindValue(':tipo', $tipo);
-$sql->execute();
+$insert = $conn->prepare('INSERT INTO moradia (nome, email, senha, telefone, tipo) VALUE (:nome, :email, :senha, :telefone, :tipo)');
+$insert->bindvalue(':email', $email);
+$insert->bindValue(':senha', $senha);
+$insert->bindValue(':nome', $nome);
+$insert->bindValue(':telefone', $telefone);
+$insert->bindValue(':cep', $cep);
+$insert->bindValue(':tipo', $tipo);
+$insert->execute();
 
-if($sql->rowCount() > 0){
-    while($dado = $sql->fetch()){
-        $email = $dado['email'];
-        $senha = $dado['senha'];
-        $nome = $dado['nome'];
-        $telefone = $dado['telefone'];
-        $cep = $dado['cep'];
-        $tipo = $dado['tipo'];
-        $json[]= array('email'=> $email, 'senha'=> $senha, 'nome'=> $nome, 'telefone'=> $telefone, 'cep'=> $cep, 'tipo'=> $tipo);
-    }echo json_encode($json, JSON_PRETTY_PRINT);
+if($insert){
+    $get = $conn->prepare('SELECT * FROM moradia WHERE email = :email');
+    $get->bindvalue(':email', $email);
+    $get->execute();
+    if($get->rowCount() > 0){
+        while($dado = $get->fetch()){
+            $email = $dado['email'];
+            $senha = $dado['senha'];
+            $nome = $dado['nome'];
+            $telefone = $dado['telefone'];
+            $cep = $dado['cep'];
+            $tipo = $dado['tipo'];
+            $json[]= array('email'=> $email, 'senha'=> $senha, 'nome'=> $nome, 'telefone'=> $telefone, 'tipo'=> $tipo);
+        }
+        echo json_encode($json, JSON_PRETTY_PRINT);
+    }else{
+        echo '[{"status": "error"}]';
+    }
 }else{
     echo '[{"status": "error"}]';
 }
