@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="js/scriptcomCadastro.js" defer></script>
+    <script src="js/scriptcomUsuario.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" 
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
+    crossorigin="anonymous" defer></script>
+    <title>Login / Cadastro</title>
+</head>
+
+<body>
+    <div class="escolha_cores"></div>
+    <div id="body" class="body">
+        <div class="espaco" id="espaco">
+            <div class="espaco234 espaco2"></div>
+            <div class="espaco234 espaco3"></div>
+            <div class="espaco234 espaco4"></div>
+            <div class="lado_direito_amarelo">
+                <h1 class="titulo_bem_vindo">Bem Vindo(a)</h1>
+                <div class="div_frase">
+                    <p class="frase">Esperamos que aproveite ao máximo nossos recursos</p>
+                </div>
+                <div class="div_imagem_lado_direito">
+                    <img class="imagem_lado_direito_esquerdo" src="img/bem_vindo.png" alt="">
+                </div>
+                <p class="tem_conta">Já tem uma conta?</p>
+                <button class="botao_lado_preto_amarelo botao_lado_amarelo" id="login">Logar</button>
+            </div>
+            <div class="lado_esquero_amarelo">
+                <h1 class="titulo_bem_vindo">Bem vindo(a) <br>
+                    de volta</h1>
+                <div class="div_frase">
+                    <p class="frase">Esperamos que esteja aproveitando nossos recursos</p>
+                </div>
+                <div class="div_imagem_lado_esquerdo">
+                    <img class="imagem_lado_direito_esquerdo" src="img/bem_vindo(a).png" alt="">
+                </div>
+                <p class="tem_conta">Não tem uma conta?</p>
+                <button class="botao_lado_preto_amarelo botao_lado_amarelo" id="register">Cadastrar-se</button>
+            </div>
+            <div class="janela_preta">
+                <div class="lado_esquerdo_preto">
+                    <div class="div_logo">
+                        <div class="logo_esquerda">
+                            <a href="../index.html"><img class="logo" src="img/logo.png" alt=""></a>
+                        </div>
+                    </div>
+                    <h1 class="titulo_cad">Cadastrar</h1>
+                    <div class="div_input">
+                        <input class="input" type="text" placeholder="Nome" required id="nome">
+                        <img class="icones_todos" src="img/user.png" alt="">
+                    </div>
+                    <div class="div_input">
+                        <input id="tel" type="numeric" inputmode="numeric" maxlength="11" placeholder="Número"
+                            class="input">
+                        <img class="icones_todos" src="img/tell.png" alt="">
+                    </div>
+                    <div class="div_input">
+                        <input id="informecpf" class="input" type="cep" placeholder="CEP" maxlength="12" required>
+                        <img class="icones_todos" src="img/map.png" alt="">
+                    </div>
+                    <div class="div_input">
+                        <input class="input" type="email" placeholder="E-mail" required id="user">
+                        <img class="icones_todos" src="img/email.png" alt="">
+                    </div>
+                    <div class="div_input">
+                        <input class="input" type="password" placeholder="Senha" required id="password">
+                        <img class="icones_todos" src="img/lock.png" alt="">
+                    </div>
+                    <div class="div_input">
+                        <input class="input" type="password" placeholder="Confirmar Senha" required id="confpassword">
+                        <img class="icones_todos" src="img/lock.png" alt="">
+                    </div>
+                    <h2 class="tipo_cadastro">Tipo</h2>
+                    <div id="tell_espaco" class="tell_espaco">
+                        <div class="tell_janela">
+                            <button id="condominio" class="btn_cc btn_condominio condominio" value="condominio">Condominio</button>
+                            <button id="comunidade" class="btn_cc btn_comunidade comunidade" value="comunidade">Comunidade</button>
+                            <button id="condominio2" class="btn_cc btn_condominio2 condominio" value="condominio">Condominio</button>
+                            <button id="comunidade2" class="btn_cc btn_comunidade2 comunidade" value="comunidade">Comunidade</button>
+                        </div>
+                    </div>
+                    <button class="botao_lado_preto_amarelo botao_lado_preto" id="btnCadastrar">Cadastrar</button>
+                    <p class="n_tem">Já possui uma conta? <a id="mobile_cadastro" class="n_cadastrar">Logar</a></p>
+                </div>
+                <div class="lado_direito_preto">
+                    <div class="div_logo">
+                        <div class="logo_direita">
+                            <a href="../index.html"><img class="logo" src="img/logo.png" alt=""></a>
+                        </div>
+                    </div>
+                    <a href=""><img class="logo_login" src="img/Design_sem_nome-removebg-preview.png" alt=""></a>
+                    <h1 class="titulo_login">Login</h1>
+                    <div id="icones" class="icones_login">
+                        <a id="icon1" href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                        <a id="icon2" href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a id="icon3" href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="div_input">
+                        <input class="input" type="text/number" placeholder="email" required id="email">
+                        <img class="icones_todos" src="img/user.png" alt="">
+                    </div>
+                    <div class="div_input">
+                        <input class="input" type="password" placeholder="Senha" required id="senha">
+                        <img class="icones_todos" src="img/lock.png" alt="">
+                    </div>
+                    <div class="div_esqueceu"><a class="esqueceu" href="../recuperarconta/redefinir_senha.html">Esqueceu sua senha? </a></div>
+                    <button class="botao_lado_preto_amarelo botao_lado_preto" id="btnEntrar">Logar</button>
+                    <p class="n_tem">Não tem conta? <a id="mobile_login" class="n_cadastrar">Cadastrar</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/home.js"></script>
+</body>
+
+</html>
+
+<!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_toggle_dark_mode -->

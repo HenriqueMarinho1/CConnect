@@ -10,7 +10,7 @@ $telefone = $_POST['telefone'];
 $cep = $_POST['cep'];
 $tipo = $_POST['selectedOption'];
 
-$insert = $conn->prepare('INSERT INTO moradia (nome, email, senha, telefone, tipo) VALUE (:nome, :email, :senha, :telefone, :tipo)');
+$insert = $conn->prepare('INSERT INTO moradia (nome, email, senha, telefone, cep, tipo) VALUE (:nome, :email, :senha, :telefone, :cep, :tipo)');
 $insert->bindvalue(':email', $email);
 $insert->bindValue(':senha', $senha);
 $insert->bindValue(':nome', $nome);

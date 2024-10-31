@@ -1,30 +1,303 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="logincadastro/css/style.css">
-    <link rel="icon" href="logincadastro/favicon/favicon.ico">
-    <title>Tudo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCONNECT</title>
+  <style>
+    /* Estilos Gerais */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #1c1c1c;
+      color: #fff;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .secao {
+      padding: 90px 0;
+      text-align: center;
+    }
+    .fundo-escuro {
+      background-color: #333;
+    }
+    .destaque {
+      color: #fbbf24;
+      font-size: 100%;
+    }
+    h1, h2 {
+      margin-bottom: 20px;
+    }
+    p {
+      margin-bottom: 40px;
+      font-size: 18px;
+    }
+    .grade {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @media (min-width: 768px) {
+      .grade {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Cabeçalho */
+    #cabecalho {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(20, 20, 20, 0.9);
+      backdrop-filter: blur(10px);
+      z-index: 50;
+      padding: 20px 0;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #fbbf24;
+    }
+    .botao {
+      padding: 10px 20px;
+      border: 2px solid #fbbf24;
+      color: #fbbf24;
+      background: none;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+    .botao:hover {
+      background-color: #fbbf24;
+      color: #1c1c1c;
+      border-radius: 15px;
+    }
+
+    /* Cartões */
+    .cartao-caracteristica, .cartao-razao, .cartao-plano {
+      background-color: #444;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
+    .cartao-caracteristica:hover, .cartao-razao:hover, .cartao-plano:hover {
+      transform: translateY(-10px);
+    }
+    .numero-razao {
+      background-color: #fbbf24;
+      color: #1c1c1c;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .preco {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    /* Rodapé */
+    footer {
+      background-color: #333;
+      padding: 20px 0;
+      text-align: center;
+    }
+    footer a {
+      color: #fbbf24;
+      text-decoration: none;
+      margin: 0 10px;
+      display: inline-flex;
+      align-items: center;
+      transition: color 0.3s;
+    }
+    footer a:hover {
+      color: #ffcc00;
+    }
+
+    /* Efeito de Fundo */
+    #efeito-flutuante {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at 50% 50%, rgba(251, 191, 36, 0.1) 0%, transparent 15%);
+      background-size: 200%;
+      transition: background-position 0.1s ease-out;
+    }
+
+    .amarela {
+        color: #fbbf24;
+    }
+
+    .borda {
+        border: 1px solid #ff9d0a;
+    }
+
+    .logar {
+      position: absolute;
+      right: 2%;
+    }
+
+    span {
+      font-size: 50%;
+    }
+  </style>
 </head>
-
 <body>
-    <div class="wrapper">
-        <div class="esp">
-            <div class="logo">
-                <img src="logincadastro/img/Design_sem_nome-removebg-preview.png" alt="" class="logo_inicial">
-            </div>
-            <div class="cadastrar">
-                <a href="logincadastro/lc.html"><button type="submit" class="btn animation buttons_inicial">
-                    Usuário</button></a>
-            </div>
-            <div class="logar">
-                <a href="logincadastro/comunidade.html"><button id="log" type="submit" class="btn animation buttons_inicial">
-                    Comunidade</button></a>
-            </div>
-        </div>
-    </div>
-</body>
+  <!-- Efeito de Fundo -->
+  <div id="efeito-flutuante"></div>
 
+  <!-- Cabeçalho -->
+  <header id="cabecalho">
+    <div class="container">
+      <div class="logo">CCONNECT 
+        <a href="logincadastro/login_cadastro.html"><button class="botao logar">Login</button></a>
+      </div>
+      
+    </div>
+  </header>
+
+  <!-- Seção Hero -->
+  <section id="hero" class="secao">
+    <div class="container">
+      <h1>Bem-vindo ao <span class="destaque">CCONNECT</span></h1>
+      <p>Seu acesso premium para conectividade móvel</p>
+    </div>
+  </section>
+
+  <!-- Seção de Características -->
+  <section class="secao fundo-escuro">
+    <div class="container">
+      <h2>O que oferecemos</h2>
+      <div class="grade">
+        <div class="cartao-caracteristica amarela">Conexão Rápida</div>
+        <div class="cartao-caracteristica amarela">Cobertura Ampla</div>
+        <div class="cartao-caracteristica amarela">Suporte 24/7</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Sobre -->
+  <section class="secao">
+    <div class="container">
+      <h2>Sobre a CCONNECT</h2>
+      <p>O CCONNECT é uma plataforma digital inovadora, 
+        desenvolvida para facilitar a identificação, 
+        discussão e resolução de problemas locais em 
+        comunidades e condomínios. Utilizando um mapa 
+        interativo e fóruns de discussão, a ferramenta 
+        permite que moradores, autoridades locais e 
+        voluntários se conectem e colaborem na melhoria 
+        do ambiente em que vivem.
+      </div>
+  </section>
+
+  <!-- Seção Por Que Escolher? -->
+  <section class="secao fundo-escuro">
+    <div class="container">
+      <h2>Por que escolher a CCONNECT?</h2>
+      <div class="grade">
+        <div class="cartao-razao">
+          <div class="numero-razao">1</div>
+          <div class="conteudo-razao">Tecnologia de Ponta</div>
+        </div>
+        <div class="cartao-razao">
+          <div class="numero-razao">2</div>
+          <div class="conteudo-razao">Preços Competitivos</div>
+        </div>
+        <div class="cartao-razao">
+          <div class="numero-razao">3</div>
+          <div class="conteudo-razao">Atendimento Personalizado</div>
+        </div>
+        <div class="cartao-razao">
+          <div class="numero-razao">4</div>
+          <div class="conteudo-razao">Flexibilidade de Planos</div>
+        </div>
+        <div class="cartao-razao">
+            <div class="numero-razao">5</div>
+            <div class="conteudo-razao">Interação e opinião de todos</div>
+        </div>
+        <div class="cartao-razao">
+            <div class="numero-razao">6</div>
+            <div class="conteudo-razao">Financeiro igualitário</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Planos -->
+  <section class="secao">
+    <div class="container">
+      <h2>Nossos Planos <div class="amarela">PREMIUM</div></h2>
+      <div class="grade">
+        <div class="cartao-plano borda">
+          <h3>Semanal</h3>
+          <p class="preco">R$ 450.00<span><br> (Nenhum desconto incluso)</span></p>
+          <ul>
+            <li>100 links de acesso</li>
+            <li>Há reajuste de valores todos os dias.</li>
+            <li>Juros adicionais ao atrasar o pagamento.</li>
+          </ul>
+          <a href=""><button class="botao">Escolher Plano</button></a>
+        </div>
+        <div class="cartao-plano borda">
+          <h3>Mensal</h3>
+          <p class="preco">R$ 1640.00<span><br> (15% de desconto)</span></p>
+          <ul>
+            <li>1000 links de acesso</li>
+            <li>Há reajuste de valores a cada semestre.</li>
+            <li>Até 3 meses sem juros no pagamento atrasado.</li>
+          </ul>
+          <button class="botao">Escolher Plano</button>
+        </div>
+        <div class="cartao-plano borda">
+          <h3>Anual</h3>
+          <p class="preco">R$ 16728.00<span><br> (27,7% de desconto)</span></p>
+          <ul>
+            <li>Links de acesso ilimitados</li>
+            <li>Há reajuste de valores a cada 5 anos.</li>
+            <li>Até 2 anos sem juros no pagamento atrasado.</li>
+          </ul>
+          <button class="botao">Escolher Plano</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="container">
+      <div>CCONNECT</div>
+      <div>
+        <a href="#"><i lucide-icon="message-circle"></i> WhatsApp</a>
+        <a href="#"><i lucide-icon="mail"></i> Email</a>
+        <a href="#"><i lucide-icon="phone-call"></i> Telefone</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Efeito de movimento no fundo ao rolar a página
+    window.addEventListener('scroll', function() {
+      const scrollY = window.scrollY;
+      document.getElementById('efeito-flutuante').style.backgroundPosition = 
+        `${scrollY % window.innerWidth}px ${scrollY % window.innerHeight}px`;
+    });
+
+    // Ícones lucide-react
+    lucide.createIcons();
+  </script>
+</body>
 </html>

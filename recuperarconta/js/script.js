@@ -1,6 +1,6 @@
-const btnsend = document.querySelector("#btnsend");
+const btnsend = document.querySelector("#submitButton");
 btnsend.addEventListener('click', function send(){
-    const email = document.querySelector("#email").value 
+    const email = document.querySelector("#emailInput").value 
     $.post('php/recuperarConta.php', {
         email:email
     }, function(resp){
