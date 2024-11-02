@@ -16,7 +16,8 @@ if($sql->rowCount() > 0){
     $email = $dado['email'];
     $senha = $dado['senha'];
     $cep = $dado['cep'];
-    $json[] = array('email'=> $email, 'senha'=> $senha, 'cep'=> $cep);
+    $nome = $dado['nome'];
+    $json[] = array('email'=> $email, 'senha'=> $senha, 'cep'=> $cep, 'nome' => $nome);
 }echo json_encode($json, JSON_PRETTY_PRINT);
 }else{
     echo '[{"status": "error"}]';

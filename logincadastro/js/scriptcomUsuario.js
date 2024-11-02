@@ -10,6 +10,7 @@ var btnEntrar = document.querySelector("#btnEntrar")
 	    	console.log(resp);
 			if(resp[0].status != 'error') {
                 localStorage.setItem('cep', resp[0].cep)
+				localStorage.setItem('nome', resp[0].nome)
 				window.location.href = '../options/options.html'
 			}
 	    })
