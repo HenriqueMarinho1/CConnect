@@ -3,6 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <?php
+    session_start();
+
+    if (!isset($_SESSION['usuario'])) { 
+        header("Location: ../logincadastro/login_cadastro.html");
+        exit();
+    }
+    $email = $_SESSION['usuario']['email'];
+    $senha = $_SESSION['usuario']['senha'];
+    ?>
   <title>Recuperação de Senha</title>
   <script src="js/script.js" defer></script>
   <script src="https://code.jquery.com/jquery-3.7.1.js" 

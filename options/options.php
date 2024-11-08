@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../logincadastro/css/style.css">
+    <?php
+    session_start();
+
+    if (!isset($_SESSION['usuario'])) { 
+        header("Location: ../logincadastro/login_cadastro.html");
+        exit();
+    }
+    $email = $_SESSION['usuario']['email'];
+    $senha = $_SESSION['usuario']['senha'];
+    ?>
     <title>Opções</title>
 </head>
 <body>

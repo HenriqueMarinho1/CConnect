@@ -13,7 +13,7 @@ class ModelChat {
     public function chat() {
         $retorno = ['status' => 0, 'dados' => null];
         try {
-            $sql = $this->db->prepare('INSERT INTO chat (mensagem, usuario, problema) VALUES (:mensagem, :usuario, :problema)');
+            $sql = $this->db->prepare('INSERT INTO chat (mensagem, usuario, problema, datas) VALUES (:mensagem, :usuario, :problema, NOW())');
             $sql->bindValue(':mensagem', $this->message);
             $sql->bindValue(':usuario', $this->usuario);
             $sql->bindValue(':problema', $this->problema);

@@ -7,6 +7,16 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" 
     integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
     crossorigin="anonymous" defer></script>
+    <?php
+    session_start();
+
+    if (!isset($_SESSION['usuario'])) { 
+        header("Location: ../logincadastro/login_cadastro.html");
+        exit();
+    }
+    $email = $_SESSION['usuario']['email'];
+    $senha = $_SESSION['usuario']['senha'];
+    ?>
   <title>Redefinir Senha</title>
   <style>
     /* styles.css */

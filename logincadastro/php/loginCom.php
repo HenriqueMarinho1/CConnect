@@ -2,6 +2,7 @@
 
 include'../../configuracao/conexao.php';
 header('Content-Type: application/json');
+session_start();
 
 $email = $_POST['email'];
 $senha = $_POST['senha'];
@@ -17,6 +18,10 @@ if($sql->rowCount() > 0){
     $senha = $dado['senha'];
     $cep = $dado['cep'];
     $nome = $dado['nome'];
+    $_SESSION['usuario'] = [
+        'email' => $dado['email'],
+        'senha' => $dado['senha']
+    ];
     $json[] = array('email'=> $email, 'senha'=> $senha, 'cep'=> $cep, 'nome' => $nome);
 }echo json_encode($json, JSON_PRETTY_PRINT);
 }else{
