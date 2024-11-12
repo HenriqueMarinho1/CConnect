@@ -15,6 +15,7 @@ $sql->execute();
 if($sql->rowCount() > 0){
     while($dado = $sql->fetch()){
     $email = $dado['email'];
+    $id = $dado['id'];
     $senha = $dado['senha'];
     $cep = $dado['cep'];
     $nome = $dado['nome'];
@@ -22,7 +23,7 @@ if($sql->rowCount() > 0){
         'email' => $dado['email'],
         'senha' => $dado['senha']
     ];
-    $json[] = array('email'=> $email, 'senha'=> $senha, 'cep'=> $cep, 'nome' => $nome);
+    $json[] = array('email'=> $email, 'senha'=> $senha, 'cep'=> $cep, 'nome' => $nome, 'id' => $id);
 }echo json_encode($json, JSON_PRETTY_PRINT);
 }else{
     echo '[{"status": "error"}]';

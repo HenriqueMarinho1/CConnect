@@ -17,6 +17,10 @@ if($sql->rowCount() > 0){
         $codigo = $dado['codigo'];
         $json[]= array('receptor' => $email, 'codigo'=> $codigo);
     }echo json_encode($json, JSON_PRETTY_PRINT);
+    $delete = $conn->prepare('DELETE * FROM email_logs WHERE receptor = :email AND codigo = :codigo');
+    $delete->bindValue(':email', $email);
+    $delete->bindValue(':codigo', $codigo);
+    $delete->execute();
 }else{
     echo '[{"status": "error"}]';
 }
