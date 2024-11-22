@@ -1,10 +1,10 @@
 <?php
 
 class Conexao {
-    public $host = "localhost:3306";
-    public $nomeBanco = "cconnect";
-    public $usuarioBanco = "root";
-    public $senhaUsuario = "";
+    public $host = "localhost";
+    public $nomeBanco = "u149144215_connect";
+    public $usuarioBanco = "u149144215_connect";
+    public $senhaUsuario = "02152301He.";
     public $pdo = null;
 
     public function abrirConexao() {
